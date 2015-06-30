@@ -102,6 +102,9 @@ class VPB_EXPORT ImageOptions : public osg::Object
         void setMipMappingMode(MipMappingMode mipMappingMode) { _mipMappingMode = mipMappingMode; }
         MipMappingMode getMipMappingMode() const { return _mipMappingMode; }
 
+        void setUseAlphaChannelWhenPresent(bool useIt) { _useAlpha = useIt; }
+        bool getUseAlphaChannelWhenPresent() const { return _useAlpha; }
+
     protected:
 
         unsigned int                                _imageryQuantization;
@@ -114,6 +117,7 @@ class VPB_EXPORT ImageOptions : public osg::Object
         TextureType                                 _textureType;
         unsigned int                                _maximumTileImageSize;
         MipMappingMode                              _mipMappingMode;
+        bool                                        _useAlpha;
 };
 
 class VPB_EXPORT BuildOptions : public ImageOptions
