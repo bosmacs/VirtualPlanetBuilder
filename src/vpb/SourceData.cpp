@@ -516,7 +516,7 @@ void SourceData::readImage(DestinationData& destination)
             }
 
             bool hasRGB = _gdalDataset->GetRasterCount() >= 3;
-            bool hasAlpha = destination._dataset->getUseAlphaChannelWhenPresent() && _gdalDataset->GetRasterCount() >= 4;
+            bool hasAlpha = destination._dataSet->getUseAlphaChannelWhenPresent() && _gdalDataset->GetRasterCount() >= 4;
             bool hasColorTable = _gdalDataset->GetRasterCount() >= 1 && _gdalDataset->GetRasterBand(1)->GetColorTable();
             bool hasGreyScale = _gdalDataset->GetRasterCount() == 1;
             unsigned int numSourceComponents = hasAlpha?4:3;
