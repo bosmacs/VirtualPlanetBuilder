@@ -34,6 +34,7 @@ ImageOptions::ImageOptions():
     _textureType = COMPRESSED_TEXTURE;
     _maximumTileImageSize = 256;
     _mipMappingMode = MIP_MAPPING_IMAGERY;
+    _useAlpha = true;
 }
 
 ImageOptions::ImageOptions(const ImageOptions& rhs,const osg::CopyOp& copyop):
@@ -65,6 +66,7 @@ void ImageOptions::setImageOptions(const ImageOptions& rhs)
     _maximumTileImageSize = rhs._maximumTileImageSize;
     _mipMappingMode = rhs._mipMappingMode;
     _textureType = rhs._textureType;
+    _useAlpha = rhs._useAlpha;
 }
 
 bool ImageOptions::compatible(ImageOptions& rhs) const
